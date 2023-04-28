@@ -8,13 +8,13 @@
 'use strict'
 
 export const weekDayNames = [
-    "Saturday",
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
-    "Friday"
+    "Friday",
+    "Saturday"
 ];
 
 export const monthNames = [
@@ -42,7 +42,7 @@ export const getDate = function(dateUnix, timezone) {
     const weekDayName = weekDayNames[date.getUTCDay()];
     const monthName = monthNames[date.getUTCMonth()];
 
-    return `${weekDayName} ${date.getUTCDate} ${monthName}`;
+    return `${weekDayName} ${date.getUTCDate()} ${monthName}`;
 }
 
 /**

@@ -29,7 +29,7 @@ const seachedLocation = query => updateWeather(...query.split("&"));
 
 const routes = new Map([
     ["/current-location", currentLocation],
-    ["/weather", seachedLocation]
+    ["weather", seachedLocation]
 ]);
 
 const checkHash = function () {
@@ -41,6 +41,8 @@ const checkHash = function () {
     console.log(requestURL.slice("?"));
     const [route, query] = requestURL.includes ? requestURL.split("?") : [requestURL];
     console.log(route, query);
+    console.log(routes.get("weather"));
+ 
     routes.get(route) ? routes.get(route)(query) : error404();  
 
 }
