@@ -40,11 +40,11 @@ const searchTimeoutDuration = 500;
 searchField.addEventListener("input", function () {
 
     searchTimeout ?? clearTimeout(searchTimeout);
-
+        console.log('searchField');
     if (!searchField.value) {
         searchResult.classList.remove("active");
         searchResult.innerHTML = "";
-        searchField.classList.remove("searching");
+        searchField.classList.remove("searching", "border-radius-bottom");
     } else {
         searchField.classList.add("searching")
     }
@@ -54,6 +54,7 @@ searchField.addEventListener("input", function () {
             fetchData(url.geo(searchField.value), function (locations) {
                 searchField.classList.remove("searching")
                 searchResult.classList.add("active")
+                searchField.classList.add("border-radius-bottom")
                 searchResult.innerHTML = `
                 <ul class="view-list" data-search-list>
                     

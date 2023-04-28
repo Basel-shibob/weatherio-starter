@@ -325,6 +325,10 @@ body {
   100% {opacity: 1;}
 }
 
+.border-radius-bottom{
+  border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
 
 /*-----------------------------------*\
   #HEADER
